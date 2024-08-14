@@ -9,11 +9,8 @@ class Solution(object):
         for d in n:
             if ord(d) not in range(97,123) and ord(d) not in range(48,58):
                 n = n.replace(d,'')
-
-        b = ''
-        for i in range(len(n)-1,-1,-1):
-            b +=n[i]
-        if b == n:
+        b = n
+        if n == b[::-1]:
             return True
 
         return False
