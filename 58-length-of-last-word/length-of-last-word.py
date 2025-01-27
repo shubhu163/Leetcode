@@ -10,10 +10,6 @@ class Solution(object):
         i = len(s) - 1
         count = 0
 
-        if len(s) == 1:
-            return 1
-        print(s)
-
         while i>-1:
             if s[i] in remove:
                i -= 1
