@@ -1,8 +1,8 @@
 # Write your MySQL query statement below
-SELECT IFNULL((
+SELECT (
 SELECT num
 FROM MyNumbers
 GROUP BY num
 HAVING COUNT(num) = 1
 ORDER by num DESC
-LIMIT 1),NULL) as num
+LIMIT 1) as num
