@@ -17,11 +17,19 @@ class Solution(object):
             node = node.next
         
         i = len(values) - 1
-        while i>=0:
-            if head.val != values[i]:
+        j = 0
+        while j<i:
+            if values[j] != values[i]:
                 return False
-            head = head.next
-            i-=1
+            i -= 1
+            j += 1
         return True
+
+        # while i>=0:
+        #     if head.val != values[i]:
+        #         return False
+        #     head = head.next
+        #     i-=1
+        # return True
 
         
