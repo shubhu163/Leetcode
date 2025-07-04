@@ -4,18 +4,15 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        # My Solution
-        # n = s.strip().replace(' ','').lower()
-        # for d in n:
-        #     if ord(d) not in range(97,123) and ord(d) not in range(48,58):
-        #         n = n.replace(d,'')
-        # b = n
-        # if n == b[::-1]:
-        #     return True
-
-        # return False
-        n = ''
-        for c in s:
-            if c.isalnum():
-                n+=c.lower()
-        return n == n[::-1]
+        s = s.strip().lower().replace(' ','')
+        for d in s:
+            if ord(d) not in range(97,123) and ord(d) not in range(48,58):
+                s = s.replace(d,'')
+        
+        l,r = 0, len(s)-1
+        while l<r:
+            if s[l] != s[r]:
+                return False
+            l += 1
+            r -= 1
+        return True
