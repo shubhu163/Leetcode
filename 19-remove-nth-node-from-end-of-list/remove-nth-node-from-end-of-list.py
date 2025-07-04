@@ -10,28 +10,21 @@ class Solution(object):
         :type n: int
         :rtype: Optional[ListNode]
         """
-        if not head or not head.next:
-            return None
         dummy = ListNode(0,head)
-        first = head
+        first = dummy
         second = head
-        i = n
 
-        while i>0 and second:
+        while n>0 and second:
             second = second.next
-            i -= 1
-
-        while not second:
-            dummy.next = head.next
-            return dummy.next
-                
-        while second.next:
+            n -= 1
+        
+        while second:
             first = first.next
             second = second.next
-        
-        tmp = first.next
-        first.next = tmp.next
+
+        first.next = first.next.next
 
         return dummy.next
+
 
 
