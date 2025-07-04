@@ -5,14 +5,17 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        top = 0
-        btm = len(numbers) - 1
+        l ,r  = 0,len(numbers) - 1
 
-        while top!=btm:
-                if numbers[top] + numbers[btm] > target:
-                        btm -= 1
-                elif numbers[top] + numbers[btm] == target:
-                    return top+1,btm+1
-                else:
-                        top += 1
-        return []
+        while l < r:
+            if numbers[l] + numbers[r] > target:
+                r -= 1
+            elif numbers[l] + numbers[r] < target:
+                l += 1
+            elif numbers[l] + numbers[r] == target:
+                return [l+1,r+1]
+        return None
+
+
+
+        
