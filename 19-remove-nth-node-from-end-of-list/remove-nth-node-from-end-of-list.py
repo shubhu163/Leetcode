@@ -17,7 +17,7 @@ class Solution(object):
         second = head
         i = n
 
-        while i>0:
+        while i>0 and second:
             second = second.next
             i -= 1
 
