@@ -11,18 +11,32 @@ class Solution(object):
         :rtype: int
         """
         
-        def rec(node):
-            if not node:
-                return 0
+        # def rec(node):
+        #     if not node:
+        #         return 0
 
-            res = 0
+        #     res = 0
 
-            if node.left and not node.left.left and not node.left.right:
-                res += node.left.val
+        #     if node.left and not node.left.left and not node.left.right:
+        #         res += node.left.val
 
-            res +=  rec(node.left)
-            res+= rec(node.right)
-            return res
+        #     res +=  rec(node.left)
+        #     res+= rec(node.right)
+        #     return res
         
-        return rec(root)
+        # return rec(root)
         
+        q = deque()
+        q.append(root)
+        res = 0
+        while q:
+            node = q.popleft()
+            if node:
+                if node.left and not node.left.left and not node.left.right:
+                    res += node.left.val
+                
+                q.append(node.left)
+                q.append(node.right)
+        return res
+
+
