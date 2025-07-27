@@ -14,10 +14,10 @@ class Solution(object):
 
         while queue:
             count += 1
-            level_size = len(queue)
+            size = len(queue)
             arr = []
 
-            for _ in range(level_size):
+            for i in range(size):
                 node = queue.popleft()
                 arr.append(node.val)
 
